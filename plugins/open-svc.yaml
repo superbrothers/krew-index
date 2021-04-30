@@ -4,29 +4,46 @@ metadata:
   name: open-svc
 spec:
   platforms:
-  - uri: "https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.1.0/kubectl-open_svc-darwin-amd64.zip"
-    sha256: "10274117f7db298f6be34675e7f0f2c5b54eabfb3c2f9417f40b20a773506e1f"
+  - uri: https://github.com/superbrothers-sandbox/try-krew-release/releases/download/v0.0.4/kubectl-open_svc-darwin-amd64.zip
+    sha256: ff9031ca6d01ff83276c7844fa162a258eda24f3aabe2f21049f43fddffa8e2d
     bin: kubectl-open_svc
     files:
-    - from: "kubectl-open_svc"
-      to: "."
+    - from: kubectl-open_svc
+      to: .
+    - from: LICENSE
+      to: .
     selector:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: "https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.1.0/kubectl-open_svc-linux-amd64.zip"
-    sha256: "d8c105826d6fd379304f19dc458ea8ff1fd6de17741681d726e17f1753f1525d"
+  - uri: https://github.com/superbrothers-sandbox/try-krew-release/releases/download/v0.0.4/kubectl-open_svc-linux-amd64.zip
+    sha256: 51f92aa644c1b3f981d760c3556054aa808ab8b1671718b09d67eded3206c2fe
     bin: kubectl-open_svc
     files:
-    - from: "kubectl-open_svc"
-      to: "."
+    - from: kubectl-open_svc
+      to: .
+    - from: LICENSE
+      to: .
     selector:
       matchLabels:
         os: linux
         arch: amd64
-  version: "v2.1.0"
+  - uri: https://github.com/superbrothers-sandbox/try-krew-release/releases/download/v0.0.4/kubectl-open_svc-windows-amd64.zip
+    sha256: 10cffec42b15426864d3a7278ca3a77fec02ae275c3b6e002dfc6b48c937be7c
+    bin: kubectl-open_svc.exe
+    files:
+    - from: kubectl-open_svc.exe
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  version: "v0.0.4"
   shortDescription: Open the Kubernetes URL(s) for the specified service in your browser.
   description: |
-    Open the Kubernetes URL(s) for the specified service in your browser
-    through a local proxy server using kubectl proxy.
-  homepage: https://github.com/superbrothers/kubectl-open-svc-plugin
+    Open the Kubernetes URL(s) for the specified service in your browser.
+    Unlike the `kubectl port-forward` command, this plugin makes services
+    accessible via their ClusterIP.
+  homepage: https://github.com/superbrothers-sandbox/try-krew-release
